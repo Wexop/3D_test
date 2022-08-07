@@ -20,10 +20,16 @@ public class Chomper : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        move();
+    }
+
+    void move()
+    {
         moveInputHorizontal = Input.GetAxis("Horizontal");
         if (moveInputHorizontal != 0)
         {
             rb.velocity = new Vector3(moveInputHorizontal * speed, rb.velocity.y, rb.velocity.z);
+            
         }
         
         moveInputVertical = Input.GetAxis("Vertical");
@@ -31,6 +37,5 @@ public class Chomper : MonoBehaviour
         {
             rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, moveInputVertical * speed);
         }
-        
     }
 }
