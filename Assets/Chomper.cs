@@ -9,6 +9,10 @@ public class Chomper : MonoBehaviour
 
     public float speed;
 
+    public Animator animator;
+
+    public float rotationSpeed;
+
     private float moveInputHorizontal;
     private float moveInputVertical;
     // Start is called before the first frame update
@@ -26,16 +30,26 @@ public class Chomper : MonoBehaviour
     void move()
     {
         moveInputHorizontal = Input.GetAxis("Horizontal");
-        if (moveInputHorizontal != 0)
-        {
-            rb.velocity = new Vector3(moveInputHorizontal * speed, rb.velocity.y, rb.velocity.z);
-            
-        }
-        
         moveInputVertical = Input.GetAxis("Vertical");
-        if (moveInputVertical != 0)
+        if (moveInputHorizontal != 0 || moveInputVertical != 0)
         {
-            rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, moveInputVertical * speed);
+            animator.SetBool("isWalking", true);
+            Vector3 movementDirection = new Vector3(moveInputHorizontal * speed, rb.velocity.y, moveInputVertical * speed);
+            
+            Vector3 vectorForRotation = rb.velocity;
+            vectorForRotation.y = 0;
+            
+            rb.velocity = movementDirection;
+            Quaternion toRotation = Quaternion.LookRotation(vectorForRotation);
+            transform.rotation =
+                Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+
+
         }
+        else
+        {
+            animator.SetBool("isWalking", false);
+        }
+
     }
 }
