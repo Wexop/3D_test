@@ -350,6 +350,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 892875125}
   speed: 10
+  runSpeed: 20
   animator: {fileID: 892875129}
   rotationSpeed: 750
 --- !u!95 &892875129 stripped
