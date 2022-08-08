@@ -49,6 +49,7 @@ public class Chomper : MonoBehaviour
         else
         {
             animator.SetBool("isWalking", false);
+
         }
 
     }
