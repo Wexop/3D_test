@@ -455,8 +455,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 892875128}
-  height: 20
-  bottom: -10
+  height: 30
+  bottom: -15
 --- !u!1 &2073681484
 GameObject:
   m_ObjectHideFlags: 0
@@ -482,7 +482,7 @@ TerrainCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2073681484}
-  m_Material: {fileID: 13400000, guid: 5a2ee47e1cbf92c41855fe544c93f67f, type: 2}
+  m_Material: {fileID: 0}
   m_Enabled: 1
   m_TerrainData: {fileID: 15600000, guid: 8ee04e1f17f7f5549acabd4c8d8a68c4, type: 2}
   m_EnableTreeColliders: 1
