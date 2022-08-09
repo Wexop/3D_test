@@ -24,6 +24,9 @@ public class moveCamera : MonoBehaviour
     public float moveCameraTopPosY;
     public float moveCameraTopRotaX;
 
+    public float moveCameraSideRotaY;
+    public float moveCameraSidePosX;
+
 
     private float addToRotaY;
     private float addToRotaX;
@@ -49,6 +52,11 @@ public class moveCamera : MonoBehaviour
         addToPosY = 0;
         addToPosZ = 0;
         addToPosX = 0;
+
+        if (moveInputHorizontal != 0)
+        {
+            addToPosX = moveInputHorizontal * moveCameraSidePosX;
+        }
         
         if (moveInputVertical > 0)
         {
@@ -61,7 +69,7 @@ public class moveCamera : MonoBehaviour
         {
             addToPosY = moveInputVertical * moveCameraBottomPosY;
             addToRotaX = moveInputVertical * moveCameraBottomRotaX;
-            addToPosX = moveInputVertical * moveCameraBottomPosX;
+            addToPosX += moveInputVertical * moveCameraBottomPosX;
         }
         
         Vector3 posVector = new Vector3(player.transform.position.x + addToPosX, (player.transform.position.y + height + addToPosY), player.transform.position.z + bottom + addToPosZ);

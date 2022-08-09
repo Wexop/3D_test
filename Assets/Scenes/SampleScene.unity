@@ -482,6 +482,8 @@ MonoBehaviour:
   moveCameraBottomPosX: 0
   moveCameraTopPosY: 10
   moveCameraTopRotaX: 30
+  moveCameraSideRotaY: 10
+  moveCameraSidePosX: 10
 --- !u!1 &2073681484
 GameObject:
   m_ObjectHideFlags: 0
