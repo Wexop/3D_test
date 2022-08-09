@@ -24,6 +24,7 @@ public class Chomper : MonoBehaviour
     {
         rb = rb.GetComponent<Rigidbody>();
         defaultSpeed = speed;
+        
     }
 
     // Update is called once per frame
